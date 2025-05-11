@@ -1,9 +1,9 @@
 # site properties and page defaults
-title: Lab Website Template
-subtitle: by the Greene Lab
-description: An easy-to-use, flexible website template for labs, with automatic citations, GitHub tag imports, pre-built components, and more.
-header: images/background.jpg
-footer: images/background.jpg
+title: DeltaG
+subtitle: Grounded in Physics - Accelerated by AI
+# description: An easy-to-use, flexible website template for labs, with automatic citations, GitHub tag imports, pre-built components, and more.
+header: images/background_blue.png
+footer: images/background_blue.png
 proofer: false
 
 # site social media and other links

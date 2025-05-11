@@ -1,22 +1,16 @@
 ---
+header-dark: false
+footer-dark: false
 ---
+# **Revolutionizing Antibody-Antigen Discovery and Characterization by Generative AI**
 
-# Lab Website Template
-
-[Lab Website Template](https://github.com/greenelab/lab-website-template) is an easy-to-use, flexible website template for [labs](https://www.greenelab.com/).
-Spend less time worrying about managing a website and citations, and more time running your lab.
-
-{%
-  include button.html
-  type="docs"
-  link="https://greene-lab.gitbook.io/lab-website-template-docs"
-%}
-{%
-  include button.html
-  type="github"
-  text="On GitHub"
-  link="greenelab/lab-website-template"
-%}
+{% include figure.html image="images/technology/antigen_antibody_website.gif" caption="" width="50%"%}
+<!--
+Accessibility: The figure.html include supports alt text and captions for screen readers. Setting style="width:50%;" ensures the image is scaled to 50% width, which can improve readability and layout for users, including those with visual or cognitive disabilities who benefit from less cluttered pages.
+-->
+<!--
+Accessibility: The image is inserted using the figure.html include, which supports captions and alt text for screen readers, improving accessibility for visually impaired users.
+-->
 
 {% include section.html %}
 
@@ -28,7 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include button.html
-  link="research"
+  link="technology"
   text="See our publications"
   icon="fa-solid fa-arrow-right"
   flip=true
@@ -40,8 +34,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {%
   include feature.html
   image="images/photo.jpg"
-  link="research"
-  title="Our Research"
+  link="technology"
+  title="Our Technology"
   text=text
 %}
 
@@ -51,8 +45,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include button.html
-  link="projects"
-  text="Browse our projects"
+  link="pipelines"
+  text="Browse our pipelines"
   icon="fa-solid fa-arrow-right"
   flip=true
   style="bare"
@@ -63,8 +57,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {%
   include feature.html
   image="images/photo.jpg"
-  link="projects"
-  title="Our Projects"
+  link="pipelines"
+  title="Our Pipelines"
   flip=true
   style="bare"
   text=text
