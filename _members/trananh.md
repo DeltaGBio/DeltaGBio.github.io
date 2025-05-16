@@ -1,16 +1,15 @@
 ---
 name: Tran Anh, PhD
-image: images/photo.jpg
+image: images/members/Anh.jpg
 description: Pharmaco-epidemiologist
-affiliation: ANSM 
+affiliation: EPIPHARE 
 aliases:
   - Anh Tran
 links:
-  home-page: https://duynth29.github.io/
-  orcid: 0009-0008-5591-0526
+  orcid: 0000-0003-3541-5524
 ---
-I'm a pharmacist turned pharmaco-epidemiologist and protein designer.
+I'm a clinical pharmacist turned pharmaco-epidemiologist.
 
-I'm passionate about protein structures and dynamics with a strong foundation of physical chemistry and integrative structural biology.
+I'm passionate about improving patient health by answering questions about drug safety.
 
-My focus is on integrating deep learning with physics-based simulations and experimental data to understand and design proteins with novel functions.
+My focus is on investigating drug safety in real-world setting using claims data.

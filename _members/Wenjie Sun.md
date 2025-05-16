@@ -1,6 +1,6 @@
 ---
-name: Duc Duy VU, PhD
-image: images/photo.jpg
+name: Wenjuie Sun, PhD
+image: images/members/photo.jpg
 role: Team Leader
 description: Protein Designer
 affiliation: Pasteur Institut
