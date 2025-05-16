@@ -1,8 +1,8 @@
 ---
 name: Tran Anh, PhD
 image: images/members/Anh.jpg
-description: Pharmaco-epidemiologist
-affiliation: EPIPHARE 
+description: Epidemiologist
+affiliation: EPI-PHARE 
 aliases:
   - Anh Tran
 links:

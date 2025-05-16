@@ -3,7 +3,7 @@ name: Wenjie Sun, PhD
 image: images/members/Wenjie.jpeg
 role: Member
 description: Computational biologist
-affiliation: Pasteur Institut
+affiliation: Institut Pasteur
 aliases:
   - D.D. VU
 links:

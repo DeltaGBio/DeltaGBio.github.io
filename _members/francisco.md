@@ -3,7 +3,7 @@ name: Francisco J Martinez, PhD
 image: images/members/Francisco.jpg
 role: Member
 description: Biologist
-affiliation: Pasteur Institute
+affiliation: Institut Pasteur
 aliases:
   - 
 links:
