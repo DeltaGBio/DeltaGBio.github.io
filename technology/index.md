@@ -7,8 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-microscope" %}Our Technology
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Our technology leverages protein language models to identify mutations that may be associated with treatments in cancer patients. By analyzing protein sequences, we detect critical variations associated with disease progression, enabling more targeted and personalized therapeutic strategies.
 
 {% include section.html %}
 

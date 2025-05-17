@@ -24,7 +24,7 @@ footer-dark: false
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We are improving healthcare for cancer patients by harnessing the power of protein language models to identify mutations that impact therapy decisions—delivering faster, more cost-effective solutions.
 
 {%
   include button.html
@@ -46,7 +46,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 %}
 
 {% capture text %}
-pipline captions here 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
 {%
   include button.html
   link="pipelines"
@@ -70,7 +72,7 @@ pipline captions here
 
 {% capture text %}
 
-
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 {%
   include button.html
