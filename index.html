@@ -458,27 +458,358 @@
   <section class="background" data-size="page">
     <h1 id="revolutionizing-antibody-antigen-discovery-and-characterization-by-generative-ai"><strong>Revolutionizing Antibody-Antigen Discovery and Characterization by Generative AI</strong></h1>
 
-<figure class="figure">
-  <a class="figure-image" aria-label="figure link">
-    <img src="/images/technology/antigen_antibody_website.gif" style="
-        width: 50%;
-        max-height: unset;
-      " alt="figure image" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
-  </a>
-  
-    <figcaption class="figure-caption">
+<!-- 
+
+
+
+
+<div class="slider-container" style="width: 50%; height: auto;">
+  <div class="slider" role="region" aria-label="Image slider">
+    
+      <div class="slide" aria-hidden="false">
+        <figure>
+          <img 
+            src="/images/technology/antigen_antibody_website.gif"
+            alt="Animation showing antibody-antigen interaction and binding process"
+            loading="lazy"
+            onerror="this.src = '/images/fallback.svg'; this.onerror = null;"
+
+          >
+          
+            <figcaption>Dynamic visualization of antibody-antigen binding mechanism
+</figcaption>
+          
+        </figure>
+      </div>
+    
+      <div class="slide" aria-hidden="true">
+        <figure>
+          <img 
+            src="/images/technology/ai_model.gif"
+            alt="AI model architecture for antibody design"
+            loading="lazy"
+            onerror="this.src = '/images/fallback.svg'; this.onerror = null;"
+
+          >
+          
+            <figcaption>Our advanced AI model architecture for antibody design and optimization
+</figcaption>
+          
+        </figure>
+      </div>
+    
+      <div class="slide" aria-hidden="true">
+        <figure>
+          <img 
+            src="/images/technology/lab_workflow.gif"
+            alt="Laboratory workflow for antibody validation"
+            loading="lazy"
+            onerror="this.src = '/images/fallback.svg'; this.onerror = null;"
+
+          >
+          
+            <figcaption>Integrated laboratory workflow for antibody validation and testing
+</figcaption>
+          
+        </figure>
+      </div>
+    
+    
+    <button class="slider-nav prev" aria-label="Previous slide">
+      <i class="icon fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="slider-nav next" aria-label="Next slide">
+      <i class="icon fa-solid fa-chevron-right"></i>
+    </button>
+    
+    <div class="slider-dots" role="tablist">
       
+        <button 
+          class="slider-dot active"
+          role="tab"
+          aria-selected="true"
+          aria-label="Go to slide 1"
+          data-slide="0"
+        ></button>
+      
+        <button 
+          class="slider-dot "
+          role="tab"
+          aria-selected="false"
+          aria-label="Go to slide 2"
+          data-slide="1"
+        ></button>
+      
+        <button 
+          class="slider-dot "
+          role="tab"
+          aria-selected="false"
+          aria-label="Go to slide 3"
+          data-slide="2"
+        ></button>
+      
+    </div>
+  </div>
+</div>
 
-    </figcaption>
+<style>
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  margin: 1em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* aspect-ratio: 16/9; */
+  max-height: 120vh;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  transition: transform 5s ease-in-out;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slide figure {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.slide figcaption {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.slider-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-nav.prev {
+  left: 1em;
+}
+
+.slider-nav.next {
+  right: 1em;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  margin-top: 10px;
+}
+
+.slider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.slider-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.slider-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider, .slide {
+    transition: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .slider-container {
+    aspect-ratio: 4/3;
+    max-height: 50vh;
+  }
   
-</figure>
+  .slider-nav {
+    padding: 0.5em;
+  }
+  
+  .slider-dots {
+    bottom: 15px;
+    padding: 6px 10px;
+  }
+}
+</style>
 
-<!--
-Accessibility: The figure.html include supports alt text and captions for screen readers. Setting style="width:50%;" ensures the image is scaled to 50% width, which can improve readability and layout for users, including those with visual or cognitive disabilities who benefit from less cluttered pages.
--->
-<!--
-Accessibility: The image is inserted using the figure.html include, which supports captions and alt text for screen readers, improving accessibility for visually impaired users.
--->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sliders = document.querySelectorAll('.slider-container');
+  
+  sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.slide');
+    const dots = slider.querySelectorAll('.slider-dot');
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let currentSlide = 0;
+    let autoplayInterval;
+    const TRANSITION_DURATION = 10000;
+    
+    function showSlide(index) {
+      // Update slides
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        slide.setAttribute('aria-hidden', i !== index);
+      });
+      
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+        dot.setAttribute('aria-selected', i === index);
+      });
+      
+      currentSlide = index;
+    }
+    
+    function nextSlide() {
+      showSlide((currentSlide + 1) % slides.length);
+    }
+    
+    function prevSlide() {
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoplay();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoplay();
+    });
+    
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showSlide(i);
+        resetAutoplay();
+      });
+    });
+    
+    // Keyboard navigation
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoplay();
+      }
+    });
+    
+    // Autoplay
+    const autoplay = true;
+    const interval = 10000;
+    
+    function startAutoplay() {
+      if (autoplay) {
+        // Clear any existing interval
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+        }
+        // Start new interval with transition duration
+        autoplayInterval = setInterval(nextSlide, TRANSITION_DURATION);
+      }
+    }
+    
+    function resetAutoplay() {
+      if (autoplay) {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+      }
+    }
+    
+    // Pause autoplay on hover
+    slider.addEventListener('mouseenter', () => {
+      if (autoplay) {
+        clearInterval(autoplayInterval);
+      }
+    });
+    
+    slider.addEventListener('mouseleave', startAutoplay);
+    
+    // Initialize
+    showSlide(0);
+    startAutoplay();
+  });
+});
+</script>  -->
   </section>
 
   
@@ -496,7 +827,7 @@ Accessibility: The image is inserted using the figure.html include, which suppor
 
 <div class="feature">
   <a href="/technology" class="feature-image" aria-label="Our Technology">
-    <img src="/images/photo.jpg" loading="lazy" alt="Our Technology" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+    <img src="/images/technology/EGFR-02.png" loading="lazy" alt="Our Technology" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   <div class="feature-text">
     
@@ -509,7 +840,7 @@ Accessibility: The image is inserted using the figure.html include, which suppor
     <a class="button" href="/technology" data-style="bare" data-flip="" aria-label="fa-solid fa-arrow-right">
       <i class="icon fa-solid fa-arrow-right"></i>
       
-        <span>See our publications</span>
+        <span>Learn more about our technology</span>
       
     </a>
   </div>
@@ -520,14 +851,14 @@ Accessibility: The image is inserted using the figure.html include, which suppor
 
 <div class="feature" data-flip="">
   <a href="/pipelines" class="feature-image" aria-label="Our Pipelines">
-    <img src="/images/photo.jpg" loading="lazy" alt="Our Pipelines" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+    <img src="/images/technology/EGFR-01.png" loading="lazy" alt="Our Pipelines" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   <div class="feature-text">
     
       <p class="feature-title">Our Pipelines</p>
     
     
-<p>Our technology leverages advanced protein language models to identify mutations that can affect treatments in cancer patients.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
 <div class="button-wrapper">
     <a class="button" href="/pipelines" data-style="bare" data-flip="" aria-label="fa-solid fa-arrow-right">
@@ -544,14 +875,14 @@ Accessibility: The image is inserted using the figure.html include, which suppor
 
 <div class="feature">
   <a href="/team" class="feature-image" aria-label="Our Team">
-    <img src="/images/photo.jpg" loading="lazy" alt="Our Team" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+    <img src="/images/TEAM.png" loading="lazy" alt="Our Team" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   <div class="feature-text">
     
       <p class="feature-title">Our Team</p>
     
     
-<p>Our pipeline involves data preprocessing, mutation mapping, model inference to predict mutation impact, and result interpretation, providing actionable insights for personalized cancer treatment.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
 <div class="button-wrapper">
     <a class="button" href="/team" data-style="bare" data-flip="" aria-label="fa-solid fa-arrow-right">
