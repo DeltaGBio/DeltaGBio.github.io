@@ -12,15 +12,10 @@ Our assistant is here to help you with common questions about our service and sa
 {%
   include button.html
   type="email"
-  text="customer_service_deltaG@gmail.com"
-  link="jane@smith.com"
+  text="duynth29@gmail.com"
+  link="duynth29@gmail.com"
 %}
-{%
-  include button.html
-  type="phone"
-  text="(+33) 7567-89919"
-  link="+1-555-867-5309"
-%}
+
 {%
   include button.html
   type="address"
