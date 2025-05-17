@@ -1,9 +1,9 @@
 ---
-name: Van Nguyen, MSc
+name: Van Nguyen, MS
 image: images/members/Van.jpg
-description: Marketing Intern
-role: Marketing Intern
-affiliation: Servier
+description: MBA
+role: MBA
+affiliation: Grenoble Management Ecole
 links:
  
 ---
