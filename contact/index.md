@@ -34,8 +34,8 @@ Our assistant is here to help you with common questions about our service and sa
 
 {%
   include figure.html
-  image="images/photo.jpg"
-  caption="Lorem ipsum"
+  image="images/office.jpg"
+  caption="Office visit"
 %}
 
 {% endcapture %}
@@ -44,8 +44,8 @@ Our assistant is here to help you with common questions about our service and sa
 
 {%
   include figure.html
-  image="images/photo.jpg"
-  caption="Lorem ipsum"
+  image="images/assistance.jpg"
+  caption="Need help?"
 %}
 
 {% endcapture %}
