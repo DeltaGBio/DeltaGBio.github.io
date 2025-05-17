@@ -1,26 +1,24 @@
 ---
-title: Contact
+title: Contact us
 nav:
   order: 5
-  tooltip: Email, address, and location
+  tooltip: mail, address, and location
 ---
 
 # {% include icon.html icon="fa-regular fa-envelope" %}Contact
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Our assistant is here to help you with common questions about our service and sales. For technical support, please email us at support_info_deltaG@gmail.com.
 
 {%
   include button.html
   type="email"
-  text="jane@smith.com"
+  text="customer_service_deltaG@gmail.com"
   link="jane@smith.com"
 %}
 {%
   include button.html
   type="phone"
-  text="(555) 867-5309"
+  text="(+33) 7567-89919"
   link="+1-555-867-5309"
 %}
 {%

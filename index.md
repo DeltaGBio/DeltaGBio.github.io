@@ -24,7 +24,7 @@ footer-dark: false
 
 {% capture text %}
 
-We are improving healthcare for cancer patients by harnessing the power of protein language models to identify mutations that impact therapy decisions—delivering faster, more cost-effective solutions.
+We are improving healthcare services for cancer patients by harnessing the power of protein language models to identify mutations that impact therapy decisions—delivering faster and more cost-effective solutions.
 
 {%
   include button.html
@@ -47,7 +47,7 @@ We are improving healthcare for cancer patients by harnessing the power of prote
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Our pipelines involve data preprocessing, mutation mapping, model inference to predict mutation impact, and result interpretation, providing actionable insights for personalized cancer treatment.
 
 {%
   include button.html
@@ -72,7 +72,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Our team members contribute their unique expertise to drive innovation in cancer treatment. We thrive on collaboration and creativity, and we’re excited to welcome bold thinkers and fearless rebels!
 
 {%
   include button.html
