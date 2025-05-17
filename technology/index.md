@@ -11,7 +11,7 @@ Our technology leverages protein language models to identify mutations that may 
 
 <div class="iframe-container" style="text-align:center; margin-bottom:2em;">
   <iframe 
-    src="http://54.226.187.124:8501/" 
+    src="http://54.226.187.124:8501/?embed=true" 
     width="100%" 
     height="800" 
     frameborder="0" 
