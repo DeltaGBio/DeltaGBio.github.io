@@ -18,7 +18,7 @@ Accessibility: The image is inserted using the figure.html include, which suppor
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We are improving healthcare for cancer patients by harnessing the power of protein language models to identify mutations that impact therapy decisions—delivering faster, more cost-effective solutions.
 
 {%
   include button.html
@@ -41,7 +41,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Our technology leverages advanced protein language models to identify mutations that can affect treatments in cancer patients. 
 
 {%
   include button.html
@@ -66,7 +66,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Our pipeline involves data preprocessing, mutation mapping, model inference to predict mutation impact, and result interpretation, providing actionable insights for personalized cancer treatment.
 
 {%
   include button.html
