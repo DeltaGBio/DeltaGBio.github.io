@@ -1,0 +1,11 @@
+- src: "images/technology/antigen_antibody_website.gif"
+  alt: "Animation showing antibody-antigen interaction and binding process"
+  caption: "Dynamic visualization of antibody-antigen binding mechanism"
+
+- src: "images/technology/ai_model.gif"
+  alt: "AI model architecture for antibody design"
+  caption: "Our advanced AI model architecture for antibody design and optimization"
+
+- src: "images/technology/lab_workflow.gif"
+  alt: "Laboratory workflow for antibody validation"
+  caption: "Integrated laboratory workflow for antibody validation and testing" 

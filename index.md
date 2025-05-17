@@ -4,13 +4,19 @@ footer-dark: false
 ---
 # **Revolutionizing Antibody-Antigen Discovery and Characterization by Generative AI**
 
-{% include figure.html image="images/technology/antigen_antibody_website.gif" caption="" width="50%"%}
-<!--
-Accessibility: The figure.html include supports alt text and captions for screen readers. Setting style="width:50%;" ensures the image is scaled to 50% width, which can improve readability and layout for users, including those with visual or cognitive disabilities who benefit from less cluttered pages.
--->
-<!--
-Accessibility: The image is inserted using the figure.html include, which supports captions and alt text for screen readers, improving accessibility for visually impaired users.
--->
+<!-- {% assign slider_images = site.data.slider_images | default: array %}
+{% if slider_images.size == 0 %}
+  {% assign slider_images = array %}
+  {% assign slider_images = slider_images | push: "images/technology/EGFR-02.png" %}
+{% endif %}
+
+{% include slider.html 
+  images=slider_images
+  width="50%"
+  height="auto"
+  autoplay=true
+  interval=10000
+%} -->
 
 {% include section.html %}
 
@@ -23,7 +29,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {%
   include button.html
   link="technology"
-  text="See our publications"
+  text="Learn more about our technology"
   icon="fa-solid fa-arrow-right"
   flip=true
   style="bare"
@@ -33,16 +39,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/technology/EGFR-02.png"
   link="technology"
   title="Our Technology"
   text=text
 %}
 
 {% capture text %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
+pipline captions here 
 {%
   include button.html
   link="pipelines"
@@ -56,7 +60,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/technology/EGFR-01.png"
   link="pipelines"
   title="Our Pipelines"
   flip=true
@@ -66,7 +70,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
 
 {%
   include button.html
@@ -81,7 +85,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/TEAM.png"
   link="team"
   title="Our Team"
   text=text

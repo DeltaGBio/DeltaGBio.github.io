@@ -1,0 +1,310 @@
+{% comment %}
+  Image slider component with accessibility features
+  Parameters:
+    - images: Array of image objects with properties:
+      - src: Image source path
+      - alt: Alt text for accessibility
+      - caption: Optional caption for the image
+    - width: Width of the slider (default: 100%)
+    - height: Height of the slider (default: auto)
+    - autoplay: Whether to autoplay the slider (default: false)
+    - interval: Autoplay interval in milliseconds (default: 5000)
+{% endcomment %}
+
+<div class="slider-container" style="width: {{ include.width | default: '100%' }}; height: {{ include.height | default: 'auto' }};">
+  <div class="slider" role="region" aria-label="Image slider">
+    {% for image in include.images %}
+      <div class="slide" {% if forloop.first %}aria-hidden="false"{% else %}aria-hidden="true"{% endif %}>
+        <figure>
+          <img 
+            src="{{ image.src | relative_url | uri_escape }}"
+            alt="{{ image.alt | default: 'Slide image' | regex_strip }}"
+            loading="lazy"
+            {% include fallback.html %}
+          >
+          {% if image.caption %}
+            <figcaption>{{ image.caption | markdownify | remove: "<p>" | remove: "</p>" }}</figcaption>
+          {% endif %}
+        </figure>
+      </div>
+    {% endfor %}
+    
+    <button class="slider-nav prev" aria-label="Previous slide">
+      {% include icon.html icon="fa-solid fa-chevron-left" %}
+    </button>
+    <button class="slider-nav next" aria-label="Next slide">
+      {% include icon.html icon="fa-solid fa-chevron-right" %}
+    </button>
+    
+    <div class="slider-dots" role="tablist">
+      {% for image in include.images %}
+        <button 
+          class="slider-dot {% if forloop.first %}active{% endif %}"
+          role="tab"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          aria-label="Go to slide {{ forloop.index }}"
+          data-slide="{{ forloop.index0 }}"
+        ></button>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  margin: 1em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* aspect-ratio: 16/9; */
+  max-height: 120vh;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  transition: transform 5s ease-in-out;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slide figure {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.slide figcaption {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.slider-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-nav.prev {
+  left: 1em;
+}
+
+.slider-nav.next {
+  right: 1em;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  margin-top: 10px;
+}
+
+.slider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.slider-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.slider-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider, .slide {
+    transition: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .slider-container {
+    aspect-ratio: 4/3;
+    max-height: 50vh;
+  }
+  
+  .slider-nav {
+    padding: 0.5em;
+  }
+  
+  .slider-dots {
+    bottom: 15px;
+    padding: 6px 10px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sliders = document.querySelectorAll('.slider-container');
+  
+  sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.slide');
+    const dots = slider.querySelectorAll('.slider-dot');
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let currentSlide = 0;
+    let autoplayInterval;
+    const TRANSITION_DURATION = 10000;
+    
+    function showSlide(index) {
+      // Update slides
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        slide.setAttribute('aria-hidden', i !== index);
+      });
+      
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+        dot.setAttribute('aria-selected', i === index);
+      });
+      
+      currentSlide = index;
+    }
+    
+    function nextSlide() {
+      showSlide((currentSlide + 1) % slides.length);
+    }
+    
+    function prevSlide() {
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoplay();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoplay();
+    });
+    
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showSlide(i);
+        resetAutoplay();
+      });
+    });
+    
+    // Keyboard navigation
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoplay();
+      }
+    });
+    
+    // Autoplay
+    const autoplay = {{ include.autoplay | default: false }};
+    const interval = {{ include.interval | default: 5000 }};
+    
+    function startAutoplay() {
+      if (autoplay) {
+        // Clear any existing interval
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+        }
+        // Start new interval with transition duration
+        autoplayInterval = setInterval(nextSlide, TRANSITION_DURATION);
+      }
+    }
+    
+    function resetAutoplay() {
+      if (autoplay) {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+      }
+    }
+    
+    // Pause autoplay on hover
+    slider.addEventListener('mouseenter', () => {
+      if (autoplay) {
+        clearInterval(autoplayInterval);
+      }
+    });
+    
+    slider.addEventListener('mouseleave', startAutoplay);
+    
+    // Initialize
+    showSlide(0);
+    startAutoplay();
+  });
+});
+</script> 
